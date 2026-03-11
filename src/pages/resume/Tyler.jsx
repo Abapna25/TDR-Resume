@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { Guitar, Flag, Globe } from 'lucide-react'
 
 const EXPERIENCE = [
@@ -78,9 +77,6 @@ export default function TylerResume() {
       {/* ── PAGE HERO ── */}
       <section className="page-hero" aria-labelledby="tyler-page-heading">
         <div className="container" style={{ padding: '4.5rem var(--side-pad) 3.5rem' }}>
-          <p className="eyebrow" style={{ color: 'var(--gold-light)', marginBottom: '1rem' }}>
-            Resume
-          </p>
           <span className="gold-rule gold-rule--lg" aria-hidden="true" />
           <h1
             id="tyler-page-heading"
@@ -91,11 +87,6 @@ export default function TylerResume() {
           <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'rgba(255,255,255,0.65)', letterSpacing: '0.04em' }}>
             DevOps &amp; Backend Software Engineer
           </p>
-          <div style={{ marginTop: '2rem' }}>
-            <Link to="/about" className="btn btn--ghost btn--sm">
-              ← Back to About
-            </Link>
-          </div>
         </div>
       </section>
 
