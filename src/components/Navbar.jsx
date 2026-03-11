@@ -15,10 +15,7 @@ export default function Navbar() {
       role="banner"
     >
       <div className="navbar__inner">
-        <span
-          className="navbar__logo"
-          style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.125rem', letterSpacing: '0.01em', color: 'var(--text-dark)', cursor: 'default' }}
-        >
+        <span className="navbar__logo">
           Tyler Reid
         </span>
       </div>
