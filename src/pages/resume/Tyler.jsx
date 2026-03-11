@@ -1,4 +1,4 @@
-import { Guitar, Flag, Globe } from 'lucide-react'
+import { Guitar, Flag, Languages, Linkedin, Github } from 'lucide-react'
 
 const EXPERIENCE = [
   {
@@ -99,18 +99,18 @@ export default function TylerResume() {
             <header className="resume-header">
               <address className="resume-contact-row" style={{ fontStyle: 'normal' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
-                  <span aria-hidden="true">📍</span> McLean, VA
+                  <span aria-hidden="true">📍</span> Portland Metro Area, OR
                 </span>
                 <a href="mailto:reidt602@gmail.com">reidt602@gmail.com</a>
-                <a href="https://tylerdavisreid.com" target="_blank" rel="noopener noreferrer">
-                  tylerdavisreid.com
-                </a>
+                <span>tylerdavisreid.com</span>
                 <a
                   href="https://linkedin.com/in/tyler-reid-d"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Tyler Reid on LinkedIn"
+                  style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}
                 >
+                  <Linkedin size={14} color="var(--gold)" strokeWidth={1.5} aria-hidden="true" />
                   LinkedIn
                 </a>
                 <a
@@ -118,7 +118,9 @@ export default function TylerResume() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Tyler Reid on GitHub"
+                  style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}
                 >
+                  <Github size={14} color="var(--gold)" strokeWidth={1.5} aria-hidden="true" />
                   GitHub
                 </a>
               </address>
@@ -208,7 +210,7 @@ export default function TylerResume() {
                   <ul style={iconListStyle} aria-label="Spoken languages">
                     {SPOKEN_LANGUAGES.map(({ lang, level }) => (
                       <li key={lang} style={iconRowStyle}>
-                        <Globe size={15} color="var(--gold)" strokeWidth={1.5} aria-hidden="true" style={{ flexShrink: 0 }} />
+                        <Languages size={15} color="var(--gold)" strokeWidth={1.5} aria-hidden="true" style={{ flexShrink: 0 }} />
                         <span>
                           {lang}
                           <span style={{ color: 'var(--text-muted)', marginLeft: '0.375rem' }}>— {level}</span>
