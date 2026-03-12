@@ -16,6 +16,7 @@ input, textarea, select { font: inherit; }
 :root {
   /* Colors */
   --white: #FFFFFF;
+  --surface: #FFFFFF;    /* card / elevated backgrounds — override separately in dark mode */
   --off-white: #FAFAF8;
   --light-cream: #F4F1EB;
   --border: #E2DDD5;
@@ -159,7 +160,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ========================= RESUME ========================= */
 .resume-page {
-  background: var(--white);
+  background: var(--surface);
   max-width: 860px;
   margin: 0 auto;
   padding: var(--sp-6) var(--sp-4);
@@ -221,6 +222,43 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 480px) {
   .resume-contact-row { flex-direction: column; gap: 0.375rem; }
   .resume-entry-header { flex-direction: column; }
+}
+
+/* ========================= DARK MODE ========================= */
+/*
+ * Only CSS variables are overridden here. Every color in the components
+ * already references a variable, so no JSX or component CSS changes are needed.
+ *
+ * --white is intentionally NOT overridden — it is used as a literal white
+ * text color in the hero section and must stay white in both modes.
+ * --surface handles card/elevated backgrounds and is safe to override.
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface:      #1e1e1e;   /* resume card, elevated backgrounds   */
+    --off-white:    #121212;   /* page body background                */
+    --light-cream:  #181818;   /* resume body wrapper — subtle depth  */
+    --border:       #2e2e2e;   /* primary borders                     */
+    --border-light: #252525;   /* navbar bottom border, dividers      */
+    --text-body:    #efefef;   /* body copy                           */
+    --text-dark:    #f5f5f5;   /* headings, strong text               */
+    --text-muted:   #909090;   /* dates, secondary text               */
+    --charcoal:     #0d0d0d;   /* hero bg — deeper than page          */
+    --gold-pale:    #1c1810;   /* subtle gold-tinted backgrounds      */
+    --gold-text:    #c4953a;   /* gold text on dark surface (= --gold) */
+    /* --gold, --gold-hover, --gold-light, --gold-light: unchanged    */
+  }
+
+  /* Navbar is flush with the page background in dark mode,
+     not elevated like it is in light mode. */
+  .navbar {
+    background: var(--off-white);
+  }
+
+  /* Default shadow is too faint on near-black; increase opacity. */
+  .navbar--scrolled {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  }
 }
 
 /* ========================= UTILITY ========================= */
