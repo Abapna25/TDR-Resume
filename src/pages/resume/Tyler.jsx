@@ -77,6 +77,7 @@ export default function TylerResume() {
       {/* ── PAGE HERO ── */}
       <section className="page-hero" aria-labelledby="tyler-page-heading">
         <div className="container" style={{ padding: '4.5rem var(--side-pad) 3.5rem' }}>
+          <span className="eyebrow eyebrow--light">Resume</span>
           <span className="gold-rule gold-rule--lg" aria-hidden="true" />
           <h1
             id="tyler-page-heading"
